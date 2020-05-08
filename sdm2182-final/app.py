@@ -16,6 +16,14 @@ app = Flask(__name__)
 def hello():
     return render_template("sdm2182_mainpage.html")
 
+@app.route("/animation")
+def animate():
+    return render_template("sdm2182_animate.html")
+
+@app.route("/chess")
+def chess():
+    return render_template("sdm2182_chess.html")
+
 #start the server
 if __name__ == "__main__":
     app.run()
