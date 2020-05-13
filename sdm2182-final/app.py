@@ -7,6 +7,7 @@ Created on Tue Apr 21 14:57:17 2020
 
 #import statements
 from flask import Flask, render_template
+from animations import  race, race_gif
 
 #Flask app variable
 app = Flask(__name__)
@@ -26,4 +27,6 @@ def chess():
 
 #start the server
 if __name__ == "__main__":
+    race()
+    race_gif()
     app.run()
