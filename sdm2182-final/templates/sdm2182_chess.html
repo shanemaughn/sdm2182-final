@@ -4,7 +4,39 @@
 	<title>Chess</title>
 	</head>
 	
-	<body>
-	<h2>Please Enjoy This Chess Information</h2>
+	<body style="background-color:#C4DED9">
+	<p><i>*personal page to scrape my chess information from official chess site
+	 and summarize it for me*</i></p>
+	<center><p style="color:#117A65"><b>Time: {{time}}</b></p>
+	<h3 style="color:#117A65">{{message}}</h3></center>
+	
+	<table><b>
+	{% for ind,row in personal_data.iterrows() %}
+    	<tr><td>{{row["0"]}}</td><td>{{row["1"]}}</td></tr>
+	{% endfor %}
+	</b></table>
+	<a href="https://ratings.fide.com/card.phtml?event=11103310" 
+	style = "color:#337C6C">Full Statistics</a>
+	
+	<h4 style="color:#464F4D">You are currently {{pos}} in the national rankings</h4>
+	
+	<p style="color:#464F4D"><b>Closest Behind You:</b></p>
+    <table>    
+        {{threats|safe}}    
+    </table>
+    
+    <p style="color:#464F4D"><b>Closest In Front You:</b></p>
+    <table>
+        {{targets|safe}}
+    </table>
+    
+    <p style="color:#464F4D"><b>Suggested Tournaments:</b></p>
+    <table>
+        {{tournaments|safe}}
+    </table>
+    <a href="https://ratings.fide.com/tournament_list.phtml?moder=ev_code&country=USA"
+    style = "color:#337C6C">Additional Tournaments</a>
+
+
 	</body>
 </html>
